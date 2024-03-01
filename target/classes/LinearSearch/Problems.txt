@@ -1,0 +1,7 @@
+1. Linear Search
+2. Linear Search string
+3. Linear search range
+4. Min Max in a array
+5. Searching in 2D Array
+6. Find Number With Even Number Of Digits ( LeetCode : 1295 )
+7. Richest Customer Wealth ( LeetCode : 1672 )
