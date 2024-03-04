@@ -35,6 +35,8 @@ public class FindTheFirstAndLastPositionOfAnElementInASortedArray {
         int ans[] = searchRange(array, 8);
         System.out.println(Arrays.toString(ans));
     }   
+
+
     static int[] searchRange(int[] nums, int target) {
         int ans[] = {-1,-1};
         // check for first occourance of target first
@@ -44,6 +46,8 @@ public class FindTheFirstAndLastPositionOfAnElementInASortedArray {
         }
         return ans;
     }
+
+    
     // This function just return the index value of what we are searching (target)
     static int search(int[] nums,int target,boolean findStartIndex){
         int ans = -1;
