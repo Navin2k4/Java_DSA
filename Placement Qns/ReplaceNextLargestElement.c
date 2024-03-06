@@ -8,15 +8,13 @@ void main(){
     int index = 0;
     int firstele = arr[index];
     int min = 0;
-    for (int i = 1; i < length; i++){
-        for(int j = i+1 ; j<length;j++){
-            firstele = arr[index];
-            if(arr[i]>arr[j] && firstele < arr[i]){
-                min = arr[j];
+    for (int i = 0; i < length; i++){
+        int nextVal = arr[i+1];
+            if(arr[i]>=nextVal && firstele <= nextVal){
+                min = nextVal;
                 arr[index] = min;
-                min=0;
                 index++;
-            }
+                firstele = arr[index];
         }
     }
     for(int x =0;x<length;x++){
