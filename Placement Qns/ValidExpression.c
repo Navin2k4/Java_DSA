@@ -1,17 +1,56 @@
-// (a+b),(a*b) = > valid
-// (ab*) => invalid
-#include<stdio.h>
-#include<stdbool.h>
-void main(){
-    char string[20];
-    printf("Enter the expression : ");
-    scanf("%s",&string);
-    for(int i=0;string[i]!='\0';i++){
-        if (string[i] >= 97 && string[i] <= 122 || string[i] >= 65 && string[i] <= 90)
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#define MAX_LEN 20
+bool isValidExpression(const char *string, int start, int end){
+    int stack[MAX_LEN];
+    int top = -1;
+    for (int i = start; i <= end; i++){
+        if (string[i] == '('){
+            if (top == MAX_LEN - 1) 
+                return false;
+            stack[++top] = i;
+        }
+        else if (string[i] == ')')
         {
-            
+            if (top == -1) 
+                return false;
+            top--;
         }
     }
+    return top == -1;
+}
 
-    printf("%s",string);
+bool isSimpleExpression(char c){
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+}
+
+bool isValidSimpleExpression(const char *string, int start, int end){
+    for (int i = start; i <= end; i++){
+        if (!isSimpleExpression(string[i]))
+                return false;
+    }
+    return true;
+}
+
+bool isValid(const char *string){
+    int len = strlen(string);
+    if (string[0] != '(' || string[len - 1] != ')')
+        return false;
+    return isValidExpression(string, 1, len - 2) && isValidSimpleExpression(string, 1, len - 2);
+}
+
+int main(){
+    char string[MAX_LEN];
+    printf("Enter the expression : ");
+    scanf("%s", string);
+
+    if (isValid(string)){
+        printf("Valid\n");
+    }
+    else{
+        printf("Invalid\n");
+    }
+
+    return 0;
 }
