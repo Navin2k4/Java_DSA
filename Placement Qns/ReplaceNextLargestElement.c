@@ -8,8 +8,10 @@ void main(){
     int index = 0;
     int firstele = arr[index];
     int min = 0;
+    int checkval = 0;
     for (int i = 0; i < length; i++){
-        int nextVal = arr[i+1];
+        int nextVal = arr[checkval];
+        checkval++;
             if(arr[i]>=nextVal && firstele <= nextVal){
                 min = nextVal;
                 arr[index] = min;
