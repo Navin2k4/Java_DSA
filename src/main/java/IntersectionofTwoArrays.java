@@ -1,43 +1,29 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+#include <stdio.h>
+#include <stdlib.h>
 
-class Solution {
-    public int[] intersection(int[] nums1, int[] nums2) {
-        List<Integer> resultList = new ArrayList<>();
-
-        // Sort both arrays
-        Arrays.sort(nums1);
-        Arrays.sort(nums2);
-
-        int i = 0, j = 0;
-
-        // Traverse both arrays
-        while (i < nums1.length && j < nums2.length) {
-            // If the current elements are equal, add to the result list
+int* intersection(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize) {
+    int maxSize = nums1Size < nums2Size ? nums1Size : nums2Size; 
+    int *result =(int *)malloc(sizeof(int) * maxSize); 
+    int index = 0;
+    for (int i=0; i<nums1Size; i++) {
+        for (int j=0; j< nums2Size; j++) {
             if (nums1[i] == nums2[j]) {
-                // Add to the result list if the list is empty or the last element is not equal
-                // to the current element
-                if (resultList.isEmpty() || resultList.get(resultList.size() - 1) != nums1[i]) {
-                    resultList.add(nums1[i]);
+                int found = 0;
+                for (int k=0; k<index; k++) {
+                    if (result[k] == nums1[i]) {
+                        found = 1;
+                        break;
+                    }
                 }
-                i++;
-                j++;
-            }
-            // Move pointers based on comparison
-            else if (nums1[i] < nums2[j]) {
-                i++;
-            } else {
-                j++;
+                if (!found) 
+                {
+                    result[index++] = nums1[i];
+                }
+                break;             
             }
         }
-
-        // Convert result list to array
-        int[] resultArray = new int[resultList.size()];
-        for (int k = 0; k < resultList.size(); k++) {
-            resultArray[k] = resultList.get(k);
-        }
-
-        return resultArray;
     }
+    *returnSize = index;
+    return result;
+    free(result); 
 }
