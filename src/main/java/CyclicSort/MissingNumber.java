@@ -32,6 +32,8 @@ public class MissingNumber {
                 return index;
             }
         }
+        // case 2 When ther is no mismatch and then the lase 
+        // element that is the length of the array should be returned
         return n;
     }
 
