@@ -18,8 +18,9 @@ public class MissingNumber {
     static int missingNumber(int[] nums) {
         int i = 0;
         int n = nums.length;
+
         while (i < n) {
-            int correctIndex = nums[i];
+           int correctIndex = nums[i];
             if (nums[i] < n && nums[i] != nums[correctIndex]) {
                 swap(nums, i, correctIndex);
             } else {
@@ -32,10 +33,8 @@ public class MissingNumber {
                 return index;
             }
         }
-        // case 2 When ther is no mismatch and then the lase 
-        // element that is the length of the array should be returned
         return n;
-    }
+    } 
 
     static void swap(int[] nums, int first, int second) {
         int temp = nums[first];
