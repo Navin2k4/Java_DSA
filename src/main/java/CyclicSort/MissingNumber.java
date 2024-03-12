@@ -17,23 +17,21 @@ public class MissingNumber {
     
     static int missingNumber(int[] nums) {
         int i = 0;
-        int n = nums.length;
-
-        while (i < n) {
+        while (i < nums.length) {
            int correctIndex = nums[i];
-            if (nums[i] < n && nums[i] != nums[correctIndex]) {
+            if (nums[i] < nums.length && nums[i] != nums[correctIndex]) {
                 swap(nums, i, correctIndex);
             } else {
                 i++;
             }
         }
 
-        for (int index = 0; index < n; index++) {
+        for (int index = 0; index < nums.length; index++) {
             if (nums[index] != index) {
                 return index;
             }
         }
-        return n;
+        return nums.length;
     } 
 
     static void swap(int[] nums, int first, int second) {
