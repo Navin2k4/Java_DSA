@@ -5,12 +5,12 @@ public class FibonacciRecursion {
         int n = 4;
         System.out.println("\nValue : "+fibo(n));
     }
-    static int fibo(int n){
+    static int fibo(int n) {
         System.out.print(n + " ");
 
-        if( n < 2 ){
+        if (n < 2) {
             return n;
         }
-        return fibo(n-1) + fibo(n-2);
+        return fibo(n - 1) + fibo(n - 2);
     }
 }
