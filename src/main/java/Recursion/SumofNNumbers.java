@@ -1,6 +1,6 @@
 package Recursion;
 
-public class SumofNnaturalNumbers {
+public class SumofNNumbers {
     public static void main(String[] args) {
         System.out.println("Sum is : "+ sumofN(2));
     }
