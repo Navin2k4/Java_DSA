@@ -1,0 +1,9 @@
+1. Binary Search
+2. Order Agnostic Binary Search
+3. Cieling of an element for the given target
+4. Floor of an element for the given Target
+5. Find Smallest Letter Greater that Target ( LeetCode : 744 )
+6. Find The First And Last Position Of An Element In A Sorted Array ( LeetCode : 34 ) - FaceBook
+7. Find the position of an element in an sorted array of infinite numbers. - Amazon
+8. Peak Index In A Mountain Array ( LeetCode - 852 )
+9. Find Peak Element ( LeetCode - 162 )
