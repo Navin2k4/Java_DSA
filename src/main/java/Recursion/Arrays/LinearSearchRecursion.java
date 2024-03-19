@@ -10,13 +10,16 @@ public class LinearSearchRecursion {
         System.out.println(LinearFindIndexLast(nums, 5, nums.length-1));
 
     }
+    
     static boolean LinearRecursion(int[] arr,int target,int index){
+
         if(index == arr.length){
             return false;
         }
         return arr[index]==target || LinearRecursion(arr, target, index+1);
 
     }
+    
     static int LinearFindIndexFront(int[] arr, int target,int index){
         if(index == arr.length){
             return -1;
